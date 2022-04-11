@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="../vue.js"></script>  
+        <title>Vue.js</title>
+    </head>
+    <body>
+        <div id="app">
+            <div>
+                {{msg}}
+            </div>
+            <p>
+                Nome:{{perfil.nome}}<br>
+                Idade:{{perfil.idade}}
+            </p>
+            <p>Seus hobbies: {{hobbies}}</p>
+            Soma:{{somar()}}
+            Subtração:{{subtrair()}}<br>
+            <button @click="handleRandomNumber">
+                Crie um número aleatório
+            </button>
+            <p>Número aleatório criado: {{randomNumber}}</p>
+        </div>
+    </body>
+    <script>
+        const options = {
+            el:'#app',
+            data:{ //variaveis reativos
+                msg: "Primeiro template controlado pelo Vue",
+                hobbies:[
+                    'Dormir',
+                    'Jogar bola',
+                    'Programar',
+                    'Ver séries'
+                ],
+                perfil:{
+                    nome:"Douglas",
+                    idade:"17",
+                },
+                randomNumber:""
+            },
+            methods:{
+                somar(){
+                    return 4 + 4
+                },
+                subtrair(){
+                    return 4-2
+                },
+                handleRandomNumber(){
+                    this.randomNumber = Math.floor(Math.random() * 1000)
+                }
+            }
+        }
+        const vm = new Vue(options) //vm view model  
+        console.log(vm)
+    </script>
+</html>

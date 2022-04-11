@@ -1,2 +1,3 @@
 # estudos-vue
-Estudos de Vue.js
+
+Repositorio para colocar todos os arquivos do curso que está sendo feito na udemy

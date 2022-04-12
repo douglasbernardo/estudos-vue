@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="/vue.js"></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="app">
+            {{paciente}}
+            <input type="text">
+            <hr>
+            <input type="radio" value="feminino" v-model="sexo">Feminino
+            <input type="radio" value="masculino" v-model="sexo">Masculino
+            <br>
+
+            {{sexo}}
+
+            <hr>
+            <select v-model="plano">
+                <option value="" disabled>Selecione um plano:</option>
+                <option value="1">Básico</option>
+                <option value="2">Vip 1</option>
+                <option value="3">Vip 2</option>
+                <option value="4">Master Premium</option>
+            </select><br>
+            {{plano}}
+            <hr>
+            <input type="checkbox" value="1" v-model="doencas">Asma
+            <input type="checkbox" value="2" v-model="doencas">Anemia
+            <input type="checkbox" value="3" v-model="doencas">Obesidade
+            <input type="checkbox" value="4" v-model="doencas">Diabetes
+            <br>
+            {{doencas}}
+            <hr>
+            <textarea v-model="diagnostico" cols="30" rows="10">
+
+            </textarea>
+            <br>
+            {{diagnostico}}
+        </div>
+    </body>
+    <script>
+            
+        const options = {
+            el:"#app",
+            data:{
+                paciente:"João Da Silva",
+                sexo:"",
+                plano:"",
+                doencas:[],
+                diagnostico:""
+            },
+            methods:{
+            },
+        }
+
+        new Vue(options)
+    </script>
+</html>

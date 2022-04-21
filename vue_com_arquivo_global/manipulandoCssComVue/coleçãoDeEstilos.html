@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="/vue.js"></script>  
+        <title>Manipulando Css com Vue</title>
+    </head>
+
+    <style>
+        .fundo{
+            background-color: #090900;
+        }
+        .texto_azul{
+            color:#00ffff;
+        }
+    </style> 
+    <body>
+        <div id="app">
+            <h1>Manipulando css com vue.js</h1>
+            <p :class="[estilo1,estilo2]">
+            Definindo os estilos com vue
+            </p>
+            <button @click="estilo2 = ''">
+                Remover estilo 2
+            </button>
+        </div>
+    </body>
+    <script>
+        const options = {
+            el:'#app',
+            data:{
+               estilo1:"fundo",
+               estilo2:"texto_azul"
+            },
+        }
+        const vm = new Vue(options)
+    </script>
+</html>
